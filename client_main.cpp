@@ -3,6 +3,7 @@
 #include <thread>
 #include <string>
 #include <mutex>
+#include <fstream>
 
 #include "sources/client/client.hpp"
 
@@ -12,12 +13,24 @@ using namespace std;
 
 bool listen_run;
 const int timer = 1;
-const char* server_ip = "127.0.0.1";
-const int port = 1234;
+string server_ip = "127.0.0.1";
+int port = 1234;
 
 
 int main(){
-    Client client(server_ip, port, timer);
+    ifstream file("server_addr.txt");
+    if(!file.is_open()){
+        file.close();
+
+        ofstream file("server_addr.txt");
+        file << server_ip << " " << port << "\n";
+        file.close();
+    }else{
+        file >> server_ip >> port;
+        file.close();
+    }
+
+    Client client(server_ip.c_str(), port, timer);
 
     client.client_log_in();
 
