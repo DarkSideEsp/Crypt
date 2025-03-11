@@ -14,7 +14,7 @@ int main(){
     unsigned long long e, d, n, a, b;
 
     cout << "Write the line: ";
-    cin >> line;
+    getline(cin, line);
     cout << "Write the password: ";
     cin >> password;
 
