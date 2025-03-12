@@ -19,12 +19,12 @@ add_executable(client client_main.cpp
                     sources/json_lib/json.hpp
                     sources/messages_gen/generators.hpp)
 
-add_executable(main main.cpp 
-                    sources/rsa/rsa.cpp
-                    sources/base_crypt_algs/base_crypt_algs.cpp
-                    sources/math_algs/math_algs.cpp
+# add_executable(main main.cpp 
+#                     sources/rsa/rsa.cpp
+#                     sources/base_crypt_algs/base_crypt_algs.cpp
+#                     sources/math_algs/math_algs.cpp
 
-                    sources/rsa/rsa.hpp 
-                    sources/base_crypt_algs/base_crypt_algs.hpp
-                    sources/math_algs/math_algs.hpp)
+#                     sources/rsa/rsa.hpp 
+#                     sources/base_crypt_algs/base_crypt_algs.hpp
+#                     sources/math_algs/math_algs.hpp)
 
