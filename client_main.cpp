@@ -18,11 +18,11 @@ int port = 1234;
 
 
 int main(){
-    ifstream file("server_addr.txt");
+    ifstream file("../server_addr.txt");
     if(!file.is_open()){
         file.close();
 
-        ofstream file("server_addr.txt");
+        ofstream file("../server_addr.txt");
         file << server_ip << " " << port << "\n";
         file.close();
     }else{
