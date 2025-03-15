@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(Server/Client)
 
-add_compile_options(-pthread)
+set(CMAKE_CXX_FLAGS)
 
 add_executable(server server_main.cpp 
                     sources/server/server.cpp
@@ -11,6 +11,9 @@ add_executable(server server_main.cpp
                     sources/json_lib/json.hpp
                     sources/messages_gen/generators.hpp)
 
+target_link_libraries(server pthread)
+
+
 add_executable(client client_main.cpp 
                     sources/client/client.cpp
                     sources/messages_gen/generators.cpp
@@ -18,6 +21,8 @@ add_executable(client client_main.cpp
                     sources/client/client.hpp
                     sources/json_lib/json.hpp
                     sources/messages_gen/generators.hpp)
+
+target_link_libraries(client pthread)
 
 # add_executable(main main.cpp 
 #                     sources/rsa/rsa.cpp
