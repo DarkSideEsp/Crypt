@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(Server/Client)
 
-set(MY_COMPILE_FLAGS "-pthread")
-
-add_definitions(${MY_COMPILE_FLAGS})
+add_compile_options(-pthread)
 
 add_executable(server server_main.cpp 
                     sources/server/server.cpp
