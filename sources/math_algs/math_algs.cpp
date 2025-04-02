@@ -41,3 +41,14 @@ vector<unsigned long long> primes_gen(unsigned long long mini=1000, unsigned lon
 
     return primes;
 }
+
+unsigned long long gcd(unsigned long long a, unsigned long long b){
+    unsigned long long temp;
+    
+    while (b != 0){
+        temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}

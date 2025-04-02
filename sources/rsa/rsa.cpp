@@ -14,12 +14,10 @@ vector<unsigned long long> gen_keys(){
     srand(time(NULL));
 
     vector<unsigned long long> primes = primes_gen(1e4, 1e5);
-    int a = rand() % primes.size();
-    int b = rand() % primes.size();
-    while(a == b) b = rand() % primes.size();
 
-    unsigned long long p = primes[a];
-    unsigned long long q = primes[b];
+    unsigned long long p = primes[rand() % primes.size()];
+    unsigned long long q = primes[rand() % primes.size()];
+    while(p == q) q = primes[rand() % primes.size()];
 
     unsigned long long n, fi, d, k, e;
     e = 1;
